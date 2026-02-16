@@ -46,3 +46,9 @@ refreshes and repeated clicks.
 ├── .gitignore
 └── README.md
 ```
+
+## Live demo
+
+The app is deployed on Render:
+
+https://expense-tracker-abdi.onrender.com
