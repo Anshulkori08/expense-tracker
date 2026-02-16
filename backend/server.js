@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-// ---------- helpers ----------
+// helpers
 function toCents(rawAmount) {
   const n = Number(rawAmount);
   if (!Number.isFinite(n) || n <= 0) {
@@ -31,7 +31,7 @@ function rowToExpense(row) {
   };
 }
 
-// ---------- API routes ----------
+// API routes
 
 // Create expense
 app.post("/expenses", (req, res) => {
@@ -121,7 +121,7 @@ app.get("/expenses", (req, res) => {
   });
 });
 
-// ---------- serve frontend ----------
+// serve frontend
 
 const publicPath = path.join(__dirname, "public");
 app.use(express.static(publicPath));
@@ -130,7 +130,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
-// ---------- 404 fallback ----------
+// fallback
+
 app.use((req, res) => {
   res.status(404).json({ error: "Not found" });
 });
