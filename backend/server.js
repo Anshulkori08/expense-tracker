@@ -137,5 +137,5 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Expense Tracker API + UI on http://localhost:${PORT}`);
+  console.log(`Expense Tracker http://localhost:${PORT}`);
 });

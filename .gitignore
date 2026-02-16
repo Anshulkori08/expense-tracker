@@ -1,4 +1,4 @@
-# Node / dependencies
+# dependencies
 node_modules/
 npm-debug.log*
 yarn.lock
@@ -7,7 +7,7 @@ yarn.lock
 expenses.sqlite
 backend/expenses.sqlite
 
-# Various OS/editor junk
+# Various OS
 .DS_Store
 Thumbs.db
 .idea/
