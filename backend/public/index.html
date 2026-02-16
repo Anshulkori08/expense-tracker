@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Expense Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <!-- Top bar / logo -->
+      <header class="top-bar">
+        <div class="brand">
+          <div class="brand-logo">₹</div>
+          <div class="brand-text">
+            <span class="brand-title">FlowTrack</span>
+            <span class="brand-subtitle">Personal Expense Tracker</span>
+          </div>
+        </div>
+        <span class="chip chip-soft">Demo workspace</span>
+      </header>
+
+      <!-- Hero section with colourful background + image -->
+      <section class="card hero-card">
+        <div class="hero-left">
+          <h1>See where your money goes.</h1>
+          <p class="hero-tagline">
+            Capture daily expenses in a few seconds, filter by category, and
+            stay ahead of your monthly budget.
+          </p>
+          <ul class="hero-points">
+            <li>Fast entry form with categories and notes</li>
+            <li>Instant totals for the expenses you’re viewing</li>
+            <li>Safe under refreshes and double-clicks</li>
+          </ul>
+        </div>
+
+        <div class="hero-right">
+          <!-- stats card in front of the background image -->
+          <div class="hero-stats">
+            <div class="hero-stats-header">
+              <span class="chip chip-strong" id="hero-chip-label">
+                Current view
+              </span>
+              <span class="hero-stats-label" id="hero-stats-label">
+                Spending snapshot
+              </span>
+            </div>
+            <div class="hero-stats-row">
+              <span class="hero-stats-title" id="hero-row1-title">
+                No expenses yet
+              </span>
+              <span class="hero-stats-value" id="hero-row1-value">
+                ₹ 0.00
+              </span>
+            </div>
+            <div class="hero-stats-row">
+              <span class="hero-stats-title" id="hero-row2-title">—</span>
+              <span class="hero-stats-value" id="hero-row2-value">—</span>
+            </div>
+            <div class="hero-stats-footer" id="hero-footer-text">
+              Add an expense to see live spending here →
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main layout: form + table -->
+      <main class="container layout-grid">
+        <section class="card">
+          <h2 class="card-title">Add expense</h2>
+          <form id="expense-form">
+            <div class="form-row">
+              <label>
+                Amount
+                <input
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  id="amount"
+                  required
+                  placeholder="0.00"
+                />
+              </label>
+
+              <label>
+                Category
+                <input
+                  type="text"
+                  id="category"
+                  required
+                  placeholder="Food, Rent, Travel…"
+                />
+              </label>
+
+              <label>
+                Date
+                <input type="date" id="date" required />
+              </label>
+            </div>
+
+            <label class="full-width">
+              Description
+              <textarea
+                id="description"
+                rows="2"
+                placeholder="Optional note (e.g. dinner with friends)"
+              ></textarea>
+            </label>
+
+            <div class="form-actions">
+              <button type="submit" id="submit-btn">Save expense</button>
+              <span id="form-status" class="status-text"></span>
+            </div>
+          </form>
+        </section>
+
+        <section class="card">
+          <header class="list-header">
+            <h2 class="card-title">Expenses</h2>
+            <div class="controls">
+              <label>
+                Filter category
+                <select id="filter-category">
+                  <option value="">All</option>
+                </select>
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="sort-newest" checked />
+                Newest first
+              </label>
+            </div>
+          </header>
+
+          <div id="list-status" class="status-text"></div>
+
+          <table id="expenses-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th class="amount-col">Amount (₹)</th>
+              </tr>
+            </thead>
+            <tbody id="expenses-body"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3" class="total-label">Total</td>
+                <td id="total-amount" class="amount-col">0.00</td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>FlowTrack · simple expense tracker demo</span>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

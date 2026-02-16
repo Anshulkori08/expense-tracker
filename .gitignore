@@ -1,0 +1,14 @@
+# Node / dependencies
+node_modules/
+npm-debug.log*
+yarn.lock
+
+# SQLite database file
+expenses.sqlite
+backend/expenses.sqlite
+
+# Various OS/editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
